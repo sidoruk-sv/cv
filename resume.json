@@ -34,11 +34,20 @@
   },
   "work": [
     {
+      "company": "Wix.com",
+      "position": "Frontend Developer",
+      "website": "wix.com",
+      "startDate": "2018.09.24",
+      "endDate": "",
+      "summary": "Wix.com is a leading cloud-based development platform with millions of users worldwide. We make it easy for everyone to create a beautiful, professional web presence.",
+      "highlights": []
+    },
+    {
       "company": "Helsi",
       "position": "Frontend Team Lead",
       "website": "helsi.me",
       "startDate": "2017.02.01",
-      "endDate": "",
+      "endDate": "2018.09.21",
       "summary": "Ukrainian healthcare startup. Key technologies used: React, Redux, Redux Saga, Redux Form.",
       "highlights": []
     },
