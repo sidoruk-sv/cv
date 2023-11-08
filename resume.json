@@ -1,16 +1,17 @@
 {
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Sydoruk Serhii",
-    "label": "Frontend Software Engineer",
-    "picture": "https://www.gravatar.com/avatar/486489f9bd18cb42de73c12f67ac889c?s=400",
+    "label": "Frontend Engineer",
+    "image": "https://www.gravatar.com/avatar/486489f9bd18cb42de73c12f67ac889c?s=400",
     "email": "sidoruksergey@gmail.com",
     "phone": "+380988113773",
     "website": "https://sydoruk.com",
-    "summary": "After working more than 8 years in client side programming, I have successfully delivered many different projects: rich, big and small, complex, interesting and awesome web projects for healthcare system, political campaign analytic system, homeowner’s maintenance management system and many others. I was a team player both in big and small agile teams. I also have experience working closely with design teams to translate their work into a pixel-perfect web format, while maintaining responsive web design conventions. I actively seek out new technologies and stay up-to-date on industry trends and advancements. Motivated to become a strong software engineer, work oriented for the result and improve professional skills.",
+    "summary": "Dynamic and detail-oriented Full Stack Developer with over 8 years of experience specializing in client-side programming. Proven track record in delivering diverse and complex web projects in sectors ranging from healthcare to political analytics and homeowner maintenance management systems.\n\n An effective team player in both large and small agile teams, with a knack for translating design team visions into pixel-perfect web formats, while adhering to responsive web design conventions.\n\n Passionate about keeping pace with the latest industry trends and advancements, and committed to continuous learning and professional growth.\n\n Driven by results, I am currently seeking opportunities to leverage my technical skills and passion to become a leading software engineer in a challenging and progressive environment.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Kyiv",
+      "city": "",
       "countryCode": "UA",
       "region": ""
     },
@@ -34,74 +35,76 @@
   },
   "work": [
     {
-      "company": "Wix.com",
-      "position": "Frontend Developer",
-      "website": "wix.com",
-      "startDate": "2018.09.24",
-      "endDate": "",
-      "summary": "Wix.com is a leading cloud-based development platform with millions of users worldwide. We make it easy for everyone to create a beautiful, professional web presence.",
-      "highlights": []
-    },
-    {
-      "company": "Helsi",
+      "name": "Wix.com",
       "position": "Frontend Team Lead",
-      "website": "helsi.me",
-      "startDate": "2017.02.01",
-      "endDate": "2018.09.21",
-      "summary": "Ukrainian healthcare startup. Key technologies used: React, Redux, Redux Saga, Redux Form.",
+      "url": "https://wix.com",
+      "startDate": "2018-09-23",
+      "summary": "Wix.com Ltd. is an Israeli software company, providing cloud-based web development services. It allows users to create HTML5 websites and mobile sites through the use of online drag and drop tools. Key technologies used: TypeScript, React.js, Mobx, Redux.",
+      "highlights": [
+        "Team Lead at Wix Groups FEDs",
+        "Engineer from FED infrastructure team (till Dec 2021)",
+        "Developer in Premium Domains FED squad (till Jan 2021)"
+      ]
+    },
+    {
+      "name": "Helsi",
+      "position": "Frontend Team Lead",
+      "url": "https://helsi.me",
+      "startDate": "2017-02-01",
+      "endDate": "2018-09-21",
+      "summary": "Ukrainian health-care startup. Key technologies used: React, Redux, Redux Saga, Redux Form.",
       "highlights": []
     },
     {
-      "company": "Cogniance",
+      "name": "Cogniance",
       "position": "Frontend Engineer",
-      "website": "",
-      "startDate": "2015.08.01",
-      "endDate": "2017.01.31",
+      "url": "https://cogniance.com",
+      "startDate": "2015-08-01",
+      "endDate": "2017-01-31",
       "summary": "",
       "highlights": [
         "Web app for homeowners (the key technologies used: Angular 1.*, SCSS);",
         "Chrome extension for Gmail (the key technologies used: InboxSDK, Backbone.js, SCSS);",
-        " CRM analytics web app (the key technologies used: React, Redux)."
+        "CRM analytics web app (the key technologies used: React, Redux)."
       ]
     },
     {
-      "company": "R&R Music Ltd",
+      "name": "R&R Music Ltd",
       "position": "Frontend Developer",
-      "website": "",
-      "startDate": "2014.10.01",
-      "endDate": "2015.07.01",
+      "url": "",
+      "startDate": "2014-10-01",
+      "endDate": "2015-07-01",
       "summary": "The key technologies used: Ember.js, JavaScript, SCSS.",
       "highlights": [
         "Development of Ember web app for music library catalog;"
       ]
     },
     {
-      "company": " ZEO Alliance",
+      "name": "ZEO Alliance",
       "position": "Frontend Developer ",
-      "website": "https://zeoalliance.com/",
-      "startDate": "2012.10.01",
-      "endDate": "2014.10.01",
+      "url": "https://clario.co",
+      "startDate": "2012-10-01",
+      "endDate": "2014-10-01",
       "summary": "The key technology used: JavaScript, jQuery, SCSS, Less, HTML, HTML5, CSS, CSS3.",
       "highlights": [
-        "supporting and improving company's indor landing management system",
-        "work with html for in-app web views inside of desktop application (MacKeeper)",
-        "implementation of new technologies (html5, css3, css frameworks, js frameworks)"
+        "supporting and improving the company's indoor landing management system",
+        "work with HTML for in-app web views inside of the desktop application (MacKeeper)",
+        "implementation of new technologies (HTML5, CSS3, CSS frameworks, JavaScript frameworks)"
       ]
     },
     {
-      "company": "Stanfy",
-      "position": "HTML/CSS/JS coder",
-      "website": "https://stanfy.com/",
-      "startDate": "2011.08.01",
-      "endDate": "2012.10.01",
+      "name": "Stanfy",
+      "position": "HTML/CSS/JavaScript developer",
+      "url": "https://stanfy.com",
+      "startDate": "2011-08-01",
+      "endDate": "2012-10-01",
       "summary": "The key technologies used: Backbone.js, PhoneGap, JavaScript, jQuery, HTML, HTML5, CSS, CSS3.",
       "highlights": [
-        "Developed hybrid mobile application PhoneGap (iOS, Android)",
-        "Worked with front-end part (in-app html views) of mobile applications;"
+        "Developed the hybrid mobile application on PhoneGap.js (iOS, Android)",
+        "Worked with the front-end part (WebViews) of mobile applications;"
       ]
     }
   ],
-  "volunteer": [],
   "education": [
     {
       "institution": "National Aviation University",
@@ -113,31 +116,34 @@
       "courses": []
     }
   ],
-  "awards": [],
-  "publications": [],
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Master",
+      "name": "React.js",
+      "level": "master",
       "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript"
+        "Redux",
+        "Redux-Saga",
+        "MobX"
+      ]
+    },{
+      "name": "AngularJS",
+      "level": "intermediate"
+    },{
+      "name": "Other",
+      "keywords": [
+        "Component-based UI", "Responsive design", "Chrome Extension development", "Continuous Integration", "JIRA tuning"
       ]
     }
+
   ],
   "languages": [
     {
-      "language": "Russian",
+      "language": "Ukrainian",
       "fluency": "Native speaker"
     },
     {
       "language": "English",
       "fluency": "Upper Intermediate"
-    },
-    {
-      "language": "Ukraine",
-      "fluency": "Fluent"
     }
   ],
   "interests": [
@@ -152,22 +158,22 @@
       "keywords": [
         "Travelling",
         "Astronomy",
-        "Listen to Podcasts"
+        "Listening to Podcasts"
       ]
     }
   ],
   "references": [
     {
       "name": "Sergey Moliavko",
-      "reference": "Sergey is great young specialist. One of those who has good knowledge, amazing desire to explore and implement new technologies.  I've collaborated with Sergey as product owner and can recommend him as a great front-end developer with huge potential."
+      "reference": "Serhii is a great young specialist. One of those who has good knowledge, amazing desire to explore and implement new technologies. I've collaborated with Serhii as product owner and can recommend him as a great front-end developer with huge potential."
     },
     {
       "name": "Anastasiia Voitova",
-      "reference": "Sergey is very innovative developer, who always followed the innovations in the industry and successfully applied them in practice. Self-organized and able to achieve the goals. Very friendly, good team player. It was pleasure to work with him."
+      "reference": "Serhii is a very innovative developer, who always followed the innovations in the industry and successfully applied them in practice. Self-organized and able to achieve the goals. Very friendly, good team player. It was a pleasure to work with him."
     },
     {
       "name": "Anna Mininkova",
-      "reference": "Sergey is highly professional HTML/CSS technicialist.  We worked together on a few extremely challenging projects, that required continuous attention, constant engagement, commitment and readiness to generate new ideas, and it proved to be an excellent collaboration.  Sergey is especially attentive to details and is eager to try out new technologies and approaches, which makes him a great team member and contractor."
+      "reference": "Serhii is highly professional HTML/CSS technician. We worked together on a few extremely challenging projects, that required continuous attention, constant engagement, commitment, and readiness to generate new ideas, and it proved to be an excellent collaboration. Serhii is especially attentive to details and is eager to try out new technologies and approaches, which makes him a great team member and contractor."
     }
   ]
 }

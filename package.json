@@ -1,0 +1,17 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "author": "serhiis <serhiis@wix.com>",
+  "repository": "git@github.com:sidoruk-sv/cv.git",
+  "scripts": {
+    "build": "resumed render -o index.html -t jsonresume-theme-eshaham",
+    "lint": "resumed validate",
+    "yarn:update": "yarn set version berry && yarn",
+    "lockfile:maintenance": "rm -rf yarn.lock && touch yarn.lock && yarn"
+  },
+  "dependencies": {
+    "jsonresume-theme-eshaham": "^1.0.7",
+    "resumed": "^3.0.1"
+  },
+  "packageManager": "yarn@4.0.1"
+}

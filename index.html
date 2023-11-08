@@ -1,944 +1,815 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sydoruk Serhii - Frontend Software Engineer</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic" rel="stylesheet" type="text/css">
-
-    <style>
-        /********************************************
-    *   reset from
-    *   http://meyerweb.com/eric/tools/css/reset/
-    *******************************************/
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, embed,
-        figure, figcaption, footer, header, hgroup,
-        menu, nav, output, ruby, section, summary,
-        time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            vertical-align: baseline;
-        }
-        article, aside, details, figcaption, figure,
-        footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-        body {
-            line-height: 1;
-        }
-        ol, ul {
-            list-style: none;
-        }
-        blockquote, q {
-            quotes: none;
-        }
-        blockquote:before, blockquote:after,
-        q:before, q:after {
-            content: '';
-            content: none;
-        }
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        /* Custom reset */
-        .main-summary p,
-        #publications .item,
-        #skills .item,
-        #languages .item,
-        #references .item,
-        #interests .item{
-            margin: 0;
-        }
-
-
-        /****************
-        *   SMARTPHONES
-        ****************/
-        em {
-            color: #757575;
-        }
-        p {
-            margin: 1em 0;
-        }
-        blockquote {
-            margin: 0;
-            margin-bottom: 1em;
-        }
-        strong {
-            font-weight: 700;
-            font-size: 1.1em;
-        }
-        ul {
-            margin-top: 1em;
-        }
-        div.item {
-            margin: 1em 0 2em;
-            padding-bottom: 2em;
-        }
-        div.item:last-of-type {
-            margin: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        p {
-            text-align: justify;
-        }
-
-
-        /* Headers */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 2.5rem;
-        }
-        h2,
-        h3 {
-            font-size: 1rem;
-        }
-        a {
-            color: #EB5F51;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Layout */
-        body {
-            background: #f2f2f2;
-            line-height: 1.6;
-            font-size: 13px;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
-
-        #resume {
-            padding: 1rem 0;
-            margin: 1rem auto;
-        }
-
-        #header {
-            padding: 0 1em;
-            margin-bottom: 1em;
-        }
-
-        #resume > header div {
-            display: table;
-            padding-left: 0.5em;
-        }
-
-        #resume > header div.middle {
-            padding-top: 1.5em;
-        }
-
-        header img {
-            display: block;
-            width: 10em;
-            border-radius: 0.275em;
-            float: right;
-            vertical-align: middle;
-        }
-
-        header .name {
-            line-height: 1;
-        }
-
-        header .label {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #757575;
-        }
-
-        section:not(.section) {
-            padding: .5em 1rem;
-        }
-
-        section#references {
-            border-bottom:none;
-        }
-
-        section#basics {
-            background: inherit;
-            margin-bottom: 0;
-        }
-
-        section#skills {
-            padding-bottom: 0;
-        }
-
-        section#education,
-        section#work,
-        .main-summary section {
-            padding-bottom: 1em;
-        }
-
-        header::after {
-            display: table;
-            content: " ";
-            clear: both;
-        }
-
-        h2.section-title {
-            text-align: left;
-            font-size: 1rem;
-            font-weight: 400;
-            color: #757575;
-            padding: 1em 1rem 0;
-            margin-bottom: 0.1275em;
-        }
-
-        .date {
-            font-weight: 700;
-            color: #757575;
-        }
-
-        .position, .area, .institution {
-            font-weight: 700;
-        }
-
-        #interests .item, #languages .item {
-            padding: 0 1em 1em 0;
-            border-bottom: none;
-        }
-
-        .website::before {
-            display: inline-block;
-            font: normal normal normal 14px/1 FontAwesome;
-            font-size: inherit;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-decoration: none;
-            min-width: 1.25em;
-            margin-right: 0.25em;
-            text-align: center;
-            content: '\f14c';
-        }
-
-        #profiles, #skills, #interests, #languages {
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-flow: row wrap;
-            flex-flow: row wrap;
-            -webkit-justify-content: flex-start;
-            justify-content: flex-start;
-            padding-bottom: 1em;
-        }
-
-        #profiles, #location {
-            box-shadow: none;
-            padding: 0;
-        }
-
-        #profiles .item {
-            margin: 0;
-            padding: 0;
-            padding-right: 1em;
-            border-bottom: none;
-        }
-
-        #interests ul {
-            margin-top: 0.5em;
-        }
-
-        #publications .name {
-            font-style: italic;
-        }
-
-        .courses li, .keywords li{
-            display: inline-block;
-            background: #f0f0f0;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-            line-height: 1;
-            color: #333;
-            padding: 0.4em 0.8em;
-            border-bottom: 1px solid #ddd;
-            border-right: 1px solid #ddd;
-            border-radius: 3px;
-        }
-
-        #publications .date {
-            font-weight: normal;
-            color: #000;
-        }
-
-        #skills .item {
-            min-width: 15em;
-            padding: 0 .5em .8em 0;
-            border-bottom: none;
-        }
-
-
-        /* Skills chart */
-        #skills .level .bar {
-            border: 1px solid #ddd;
-            display: block;
-            width: 10em;
-            height: 5px;
-            margin: 0em 0 1em 0;
-            position: relative;
-        }
-
-        #skills .level .bar::after {
-            position: absolute;
-            content: " ";
-            top: 0;
-            left: 0;
-            background: black;
-            height: 5px;
-        }
-
-        #skills .level.beginner .bar::after {
-            background: #EB5F51;
-            width: 2.5em;
-        }
-
-        #skills .level.intermediate .bar::after {
-            background: #ffdf1f;
-            width: 5em;
-        }
-
-        #skills .level.advanced .bar::after {
-            background: #59C596;
-            width: 7.5em;
-        }
-
-        #skills .level.master .bar::after {
-            background: #5CB85C;
-            width: 10em;
-        }
-
-        #references .item {
-            padding-left: 1em;
-            border-left: 5px solid #EB5F51;
-        }
-
-        .fa.social {
-            margin-right: 0.25em;
-            font-size: 1.1em;
-        }
-
-        /* Social Media Brand Colors */
-        .google-plus {
-            color: #dd4b39;
-        }
-
-        .tumblr {
-            color:#32506d;
-        }
-
-        .foursquare {
-            color:  #0072b1;
-        }
-
-        .facebook {
-            color: #3b5998;
-        }
-
-        .linkedin {
-            color: #007bb6;
-        }
-
-        .pinterest {
-            color: #cb2027;
-        }
-
-        .dribbble {
-            color: #ea4c89;
-        }
-
-        .instagram {
-            color: #517fa4;
-        }
-
-        .twitter {
-            color: #00aced;
-        }
-
-        .soundcloud {
-            color: #ff3a00;
-        }
-
-        .wordpress {
-            color: #21759b;
-        }
-
-        .youtube {
-            color: #bb0000;
-        }
-
-        .github {
-            color: #171515;
-        }
-
-        .stack-overflow {
-            color: #828386;
-            position: relative;
-        }
-
-        .flickr {
-            color: #ff0084;
-        }
-
-        .stack-overflow::after {
-            position: absolute;
-            left: 0;
-            content: '\f16c';
-            color: #f68a1f;
-            overflow: hidden;
-            height: 40%;
-        }
-
-        /******************
-        *   HELPER CLASSES
-        ******************/
-        .fa {
-            min-width: 1.25em;
-            margin-right: 0.25em;
-            text-align: center;
-        }
-
-        .clear {
-            display: table;
-            clear: both;
-        }
-
-
-        /****************
-        *   TABLET
-        ****************/
-        @media screen and (min-width: 602px) {
-
-            #resume {
-                width: 550px;
-                margin: 0 auto;
-            }
-            section > header > h3 {
-                float:left;
-            }
-            section > header > .date {
-                float: right;
-                line-height: 1.3;
-            }
-
-        }
-
-
-        /****************
-        *   LAPTOP
-        ****************/
-        @media screen and (min-width: 1025px) {
-
-            #resume {
-                width: 650px;
-                padding: 3em;
-                margin: 3em auto;
-                background: #fff;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-            }
-
-            .section {
-                display: -webkit-box;
-                display: -moz-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-flex-flow: row wrap;
-                flex-flow: row wrap;
-                -webkit-justify-content: space-between;
-                justify-content: space-between;
-                margin-bottom: 1em;
-                margin-top: 1em;
-                border-bottom: 1px solid #eee;
-            }
-
-            .section:last-of-type {
-                border-bottom: none;
-                margin-bottom: 0;
-            }
-
-            section > header {
-                line-height: 1;
-                padding-bottom: 1em;
-            }
-
-            h2.section-title {
-                line-height: 1.1;
-                padding-top: 0;
-            }
-
-            section:not(.section) {
-                width: 34.5em;
-                padding: 0 1em 1em 0;
-                margin-top:0;
-                border: none;
-            }
-
-            section p {
-                margin: 0;
-            }
-
-            section#basics {
-                width: auto;
-                padding-top: 1em;
-                padding-left: 1em;
-                padding-bottom: 0;
-                border-top: 1px solid #eee;
-                border-bottom: 1px solid #eee;
-            }
-
-            #profiles .item{
-                padding-bottom: 1em;
-            }
-
-            div {
-                padding: 0;
-            }
-
-            #skills .item {
-                padding-left:0;
-                margin-top: 0;
-            }
-
-            div.item {
-                margin-top: 0;
-                border-bottom: 1px solid #eee;
-            }
-
-        }
-        .semantic-header-readers {
-            position: absolute !important;
-            height: 1px; width: 1px;
-            overflow: hidden;
-            clip: rect(1px 1px 1px 1px);
-            clip: rect(1px, 1px, 1px, 1px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Sydoruk Serhii</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+
+  
+  <style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+body {
+  background: #fff;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  color: #333;
+  margin: 0 0 80px;
+  font-size: 15px;
+}
+
+a {
+  color: #e32b46;
+}
+
+a:focus,
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+strong {
+  font-size: smaller;
+  font-weight: 400;
+  color: #333;
+}
+
+p {
+  line-height: 1.5;
+  margin: 0 0 0.5em 0;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  font-weight: 300;
+  color: #555;
+}
+
+section {
+  margin-top: 24px;
+}
+
+ul,
+ol {
+  padding-left: 21px;
+}
+
+li {
+  line-height: 1.8;
+  list-style: none;
+}
+
+li:before {
+  content: '\f052';
+  float: left;
+  font: 16px Octicons;
+  margin-top: 6px;
+  margin-left: -20px;
+  opacity: 0.1;
+  position: absolute;
+}
+
+blockquote {
+  border-left: 3px solid #e7e9ec;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+em {
+  color: #666;
+  font-weight: 300;
+  font-style: normal;
+}
+
+h4 span:first-child {
+  color: #333;
+  font-weight: 400;
+}
+
+.section {
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.section-title {
+  flex: 1;
+  text-align: right;
+  padding-right: 30px;
+}
+
+.section-content {
+  flex: 3;
+}
+
+.container {
+  max-width: 750px;
+  padding: 0 30px;
+}
+
+.item-row {
+  break-inside: avoid;
+  padding-top: 5px;
+  margin-top: -5px;
+}
+
+.item-row-split {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-split {
+  flex: 0 0 50%;
+}
+
+#header {
+  padding: 50px 0 25px;
+}
+
+#header .section-title {
+  padding-right: 30px;
+}
+
+#header h2 {
+  color: #95a5a6;
+  font-size: 24px;
+}
+
+#content h3 {
+  color: #555;
+  font-size: 26px;
+  margin-top: -4px;
+}
+
+#profiles .network {
+  text-transform: capitalize;
+}
+
+#work .item-row {
+  margin-bottom: 20px;
+}
+
+#work .position,
+#volunteer .position {
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+#education .item {
+  break-inside: avoid;
+}
+
+#education .area {
+  font-weight: 400;
+}
+
+#education .area:before {
+  content: '\f0d7';
+  font: 16px Octicons;
+  margin-right: 6px;
+}
+
+#education .studyType {
+  margin-left: 25px;
+}
+
+#awards .summary,
+#publications .summary {
+  margin-top: 8px;
+}
+
+#publications .website a:before {
+  content: attr(href);
+}
+
+@media (min-width: 480px) {
+  .strike-through {
+    border-top: 1px solid #f4f6f6;
+    height: 20px;
+    margin-top: 12px;
+    margin-bottom: -2px;
+    position: relative;
+  }
+
+  .strike-through span,
+  .strike-through a {
+    background: #fff;
+    position: absolute;
+  }
+
+  .strike-through span:first-child {
+    padding-right: 20px;
+    margin-top: -12px;
+  }
+
+  .strike-through span + span {
+    font-size: 14px;
+    margin-top: -10px;
+    padding-left: 20px;
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  #header h2 {
+    font-size: 24px;
+  }
+
+  #content h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .date {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .strike-through span:first-child {
+    margin-bottom: 7px;
+  }
+
+  .strike-through span {
+    display: block;
+  }
+
+  #header {
+    padding: 30px 0 0;
+  }
+
+  #actions {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-content {
+    flex: 6;
+  }
+
+  #content h3 {
+    font-size: 20px;
+    margin-top: -1px;
+  }
+}
+
+@page {
+  margin-top: 0.5in;
+  margin-bottom: 0.5in;
+}
+
+@media print {
+  a[href]:after {
+    display: none;
+  }
+
+  #content aside {
+    margin: 0 !important;
+  }
+}
+
+  </style>
+  
 </head>
 <body>
-
-<div id="resume">
-    <header id="header">
-        <img src="https://www.gravatar.com/avatar/486489f9bd18cb42de73c12f67ac889c?s=400" alt="Sydoruk Serhii">
-        <div class="middle">
-            <h1 class="name">Sydoruk Serhii</h1>
-            <h2 class="label">Frontend Software Engineer</h2>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container ">
+			<div class="section">
+        <div class="section-title">
+          <img src="https://www.gravatar.com/avatar/486489f9bd18cb42de73c12f67ac889c?s=400" class="img-responsive img-circle pull-right" style="max-height: 88px">
         </div>
-    </header>
+				<div class="section-content">
+          <h1>Sydoruk Serhii</h1>
+          <h2>Frontend Engineer</h2>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    <section id="basics">
-        <h3 class="semantic-header-readers">Basic contact info:</h3>
-        <div id="location">
-            <span class="city">
-                Kyiv
+  <!-- CONTENT: Re-arrange sections order if necessary -->
+  <div id="content" class="container">
+    <!-- Contact -->
+    
+
+
+  <section id="contact" class="section">
+    <aside class="section-title"><h3>Contact</h3></aside>
+    <div class="section-content">
+      <div class="item-row">
+        <div class="item-row-split">
+          
+            <div class="item-split">
+              <strong>Email</strong>
+              <div>
+                <a href="mailto:sidoruksergey@gmail.com">sidoruksergey@gmail.com</a>
+              </div>
+            </div>
+          
+          
+            <div class="item-split">
+              <strong>Phone</strong>
+              <div class="phone">+380988113773</div>
+            </div>
+          
+          
+            <div class="item-split">
+              <strong>Website</strong>
+              <div>
+                <a target="_blank" href="https://sydoruk.com">https://sydoruk.com</a>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- About -->
+    
+
+
+  <section id="about" class="section">
+    <aside class="section-title">
+      <h3>About</h3>
+    </aside>
+    <div class="section-content">
+      <p>Dynamic and detail-oriented Full Stack Developer with over 8 years of experience specializing in client-side programming. Proven track record in delivering diverse and complex web projects in sectors ranging from healthcare to political analytics and homeowner maintenance management systems.
+
+ An effective team player in both large and small agile teams, with a knack for translating design team visions into pixel-perfect web formats, while adhering to responsive web design conventions.
+
+ Passionate about keeping pace with the latest industry trends and advancements, and committed to continuous learning and professional growth.
+
+ Driven by results, I am currently seeking opportunities to leverage my technical skills and passion to become a leading software engineer in a challenging and progressive environment.</p>
+    </div>
+  </section>
+
+
+    <!-- Profiles -->
+    
+
+
+  <section id="profiles" class="section">
+    <aside class="section-title">
+      <h3>Profiles</h3>
+    </aside>
+    <div class="section-content">
+      <div class="item-row">
+        <div class="item-row-split">
+          
+            <div class="item-split">
+              <strong class="network">Facebook</strong>
+              <div class="url">
+                <a target="_blank" href="https://www.facebook.com/SydorukSV">Sydoruk Serhii</a>
+              </div>
+            </div>
+          
+            <div class="item-split">
+              <strong class="network">Twitter</strong>
+              <div class="url">
+                <a target="_blank" href="https://twitter.com/Sidoruk_SV">@Sidoruk_SV</a>
+              </div>
+            </div>
+          
+            <div class="item-split">
+              <strong class="network">Linkedin</strong>
+              <div class="url">
+                <a target="_blank" href="https://www.linkedin.com/in/sydoruk-sv">Sydoruk Serhii</a>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Work -->
+    
+
+
+  <section id="work" class="section">
+    <aside class="section-title">
+      <h3>Work</h3>
+    </aside>
+    <div class="section-content">
+      
+        <div class="item-row">
+          <h4 class="strike-through">
+            <span>Wix.com</span>
+            <span class="date">
+              September 2018 — Now
             </span>
-            <span class="countryCode">
-                (UA),
+          </h4>
+          <div class="website pull-right">
+            <a target="_blank" href="https://wix.com">wix.com</a>
+          </div>
+          <div class="position">
+            Frontend Team Lead
+          </div>
+          <div class="summary">
+            <p>Wix.com Ltd. is an Israeli software company, providing cloud-based web development services. It allows users to create HTML5 websites and mobile sites through the use of online drag and drop tools. Key technologies used: TypeScript, React.js, Mobx, Redux.</p>
+          </div>
+          
+            <p><strong>Highlights</strong></p>
+            <ul class="highlights">
+              
+                <li class="bullet">Team Lead at Wix Groups FEDs</li>
+              
+                <li class="bullet">Engineer from FED infrastructure team (till Dec 2021)</li>
+              
+                <li class="bullet">Developer in Premium Domains FED squad (till Jan 2021)</li>
+              
+            </ul>
+          
+        </div>
+      
+        <div class="item-row">
+          <h4 class="strike-through">
+            <span>Helsi</span>
+            <span class="date">
+              February 2017 — September 2018
             </span>
+          </h4>
+          <div class="website pull-right">
+            <a target="_blank" href="https://helsi.me">helsi.me</a>
+          </div>
+          <div class="position">
+            Frontend Team Lead
+          </div>
+          <div class="summary">
+            <p>Ukrainian health-care startup. Key technologies used: React, Redux, Redux Saga, Redux Form.</p>
+          </div>
+          
         </div>
-
-        <div id="contact">
-            <div class="email">
-                <span class="fa fa-envelope"></span>
-                <a href="mailto:sidoruksergey+personal@gmail.com">sidoruksergey@gmail.com</a>
-            </div>
-            <div class="phone">
-                <span class="fa fa-phone-square"></span>
-                +380988113773
-            </div>
+      
+        <div class="item-row">
+          <h4 class="strike-through">
+            <span>Cogniance</span>
+            <span class="date">
+              August 2015 — January 2017
+            </span>
+          </h4>
+          <div class="website pull-right">
+            <a target="_blank" href="https://cogniance.com">cogniance.com</a>
+          </div>
+          <div class="position">
+            Frontend Engineer
+          </div>
+          <div class="summary">
+            <p></p>
+          </div>
+          
+            <p><strong>Highlights</strong></p>
+            <ul class="highlights">
+              
+                <li class="bullet">Web app for homeowners (the key technologies used: Angular 1.*, SCSS);</li>
+              
+                <li class="bullet">Chrome extension for Gmail (the key technologies used: InboxSDK, Backbone.js, SCSS);</li>
+              
+                <li class="bullet">CRM analytics web app (the key technologies used: React, Redux).</li>
+              
+            </ul>
+          
         </div>
-
-        <div id="profiles">
-            <div class="item">
-                <span class="network fa fa-facebook facebook"></span>
-                <span class="username">
-                    <span class="url">
-                        <a href="https://www.facebook.com/SydorukSV">Sydoruk Serhii</a>
-                    </span>
-                </span>
-            </div>
-            <div class="item">
-                <span class="network fa fa-twitter twitter"></span>
-                <span class="username">
-                    <span class="url">
-                        <a href="https://twitter.com/Sidoruk_SV">@Sidoruk_SV</a>
-                    </span>
-                </span>
-            </div>
-            <div class="item">
-                <span class="network fa fa-linkedin linkedin"></span>
-                <span class="username">
-                    <span class="url">
-                        <a href="https://www.linkedin.com/in/sydoruk-sv">Sydoruk Serhii</a>
-                    </span>
-                </span>
-            </div>
+      
+        <div class="item-row">
+          <h4 class="strike-through">
+            <span>R&amp;R Music Ltd</span>
+            <span class="date">
+              October 2014 — July 2015
+            </span>
+          </h4>
+          <div class="website pull-right">
+            <a target="_blank" href=""></a>
+          </div>
+          <div class="position">
+            Frontend Developer
+          </div>
+          <div class="summary">
+            <p>The key technologies used: Ember.js, JavaScript, SCSS.</p>
+          </div>
+          
+            <p><strong>Highlights</strong></p>
+            <ul class="highlights">
+              
+                <li class="bullet">Development of Ember web app for music library catalog;</li>
+              
+            </ul>
+          
         </div>
-    </section>
-    <section class="section main-summary">
-        <h2 class="section-title">About</h2>
-        <section>
-            <h3 class="semantic-header-readers">About me information:</h3>
-            <p>
-                After working more than 8 years in client-side programming,
-                I have successfully delivered many different projects:
-                rich, big and small, complex, interesting and awesome web projects for the health-care system,
-                political campaign analytic system, homeowner’s maintenance management system and many others.
-                I was a team player both in big and small agile teams.
-                I also have experience working closely with design teams
-                to translate their work into a pixel-perfect web format,
-                while maintaining responsive web design conventions.
-                I actively seek out new technologies and stay up-to-date on industry trends and advancements.
-                Motivated to become a strong software engineer, work-oriented for the result
-                and improve professional skills.
-            </p>
-        </section>
-    </section>
+      
+        <div class="item-row">
+          <h4 class="strike-through">
+            <span>ZEO Alliance</span>
+            <span class="date">
+              October 2012 — October 2014
+            </span>
+          </h4>
+          <div class="website pull-right">
+            <a target="_blank" href="https://clario.co">clario.co</a>
+          </div>
+          <div class="position">
+            Frontend Developer 
+          </div>
+          <div class="summary">
+            <p>The key technology used: JavaScript, jQuery, SCSS, Less, HTML, HTML5, CSS, CSS3.</p>
+          </div>
+          
+            <p><strong>Highlights</strong></p>
+            <ul class="highlights">
+              
+                <li class="bullet">supporting and improving the company&#39;s indoor landing management system</li>
+              
+                <li class="bullet">work with HTML for in-app web views inside of the desktop application (MacKeeper)</li>
+              
+                <li class="bullet">implementation of new technologies (HTML5, CSS3, CSS frameworks, JavaScript frameworks)</li>
+              
+            </ul>
+          
+        </div>
+      
+        <div class="item-row">
+          <h4 class="strike-through">
+            <span>Stanfy</span>
+            <span class="date">
+              August 2011 — October 2012
+            </span>
+          </h4>
+          <div class="website pull-right">
+            <a target="_blank" href="https://stanfy.com">stanfy.com</a>
+          </div>
+          <div class="position">
+            HTML/CSS/JavaScript developer
+          </div>
+          <div class="summary">
+            <p>The key technologies used: Backbone.js, PhoneGap, JavaScript, jQuery, HTML, HTML5, CSS, CSS3.</p>
+          </div>
+          
+            <p><strong>Highlights</strong></p>
+            <ul class="highlights">
+              
+                <li class="bullet">Developed the hybrid mobile application on PhoneGap.js (iOS, Android)</li>
+              
+                <li class="bullet">Worked with the front-end part (WebViews) of mobile applications;</li>
+              
+            </ul>
+          
+        </div>
+      
+    </div>
+  </section>
 
-    <section class="section">
-        <h2 class="section-title">Experience</h2>
-        <section id="work">
-            <h3 class="semantic-header-readers">Workplaces list:</h3>
-            <header>
-                <h3 class="name">
-                    Wix.com
-                </h3>
-                <div class="date">
-                    <span class="startDate">
-                        October 2018
-                    </span>
-                    <span class="endDate">
-                        - Present
-                    </span>
-                </div>
-            </header>
-            <div class="item">
-                <div class="position">
-                    Frontend developer
-                </div>
-                <div class="website">
-                    <a href="wix.com">wix.com</a>
-                </div>
-                <div class="summary">
-                    <p>Wix.com Ltd. is an Israeli software company, providing cloud-based web development services. It allows users to create HTML5 websites and mobile sites through the use of online drag and drop tools. Key technologies used: React, Mobx, Node.js.</p>
-                </div>
-            </div>
 
-            <header>
-                <h3 class="name">
-                    Helsi
-                </h3>
-                <div class="date">
-                    <span class="startDate">
-                        February 2017
-                    </span>
-                    <span class="endDate">
-                        September 2018
-                    </span>
-                </div>
-            </header>
-            <div class="item">
-                <div class="position">
-                    Frontend Team Lead
-                </div>
-                <div class="website">
-                    <a href="helsi.me">helsi.me</a>
-                </div>
-                <div class="summary">
-                    <p>Ukrainian health-care startup. Key technologies used: React, Redux, Redux Saga, Redux Form.</p>
-                </div>
-            </div>
-            <header>
-                <h3 class="name">
-                    Cogniance
-                </h3>
-                <div class="date">
-                    <span class="startDate">
-                        August 2015
-                    </span>
-                    <span class="endDate">
-                        - January 2017
-                    </span>
-                </div>
-            </header>
-            <div class="item">
-                <div class="position">
-                    Frontend Engineer
-                </div>
-                <div class="website">
-                    <a href="https://cogniance.com/">https://cogniance.com/</a>
-                </div>
-                <ul class="highlights">
-                    <li>Web app for homeowners (the key technologies used: Angular 1.*, SCSS);</li>
-                    <li>Chrome extension for Gmail (the key technologies used: InboxSDK, Backbone.js, SCSS);</li>
-                    <li> CRM analytics web app (the key technologies used: React, Redux).</li>
-                </ul>
-            </div>
-            <header>
-                <h3 class="name">
-                    ZEO Alliance
-                </h3>
-                <div class="date">
-                    <span class="startDate">
-                        October 2012
-                    </span>
-                    <span class="endDate">
-                        - October 2014
-                    </span>
-                </div>
-            </header>
-            <div class="item">
-                <div class="position">
-                    Frontend Developer
-                </div>
-                <div class="website">
-                    <a href="https://zeoalliance.com/">https://zeoalliance.com/</a>
-                </div>
-                <div class="summary">
-                    <p>The key technology used: JavaScript, jQuery, SCSS, Less, HTML, HTML5, CSS, CSS3.</p>
-                </div>
-                <ul class="highlights">
-                    <li>supporting and improving the company's indoor landing management system</li>
-                    <li>work with HTML for in-app web views inside of the desktop application (MacKeeper)</li>
-                    <li>implementation of new technologies (HTML5, CSS3, CSS frameworks, js frameworks)</li>
-                </ul>
-            </div>
-            <header>
-                <h3 class="name">
-                    Stanfy
-                </h3>
-                <div class="date">
-                    <span class="startDate">
-                        August 2011
-                    </span>
-                    <span class="endDate">
-                        - October 2012
-                    </span>
-                </div>
-            </header>
-            <div class="item">
-                <div class="position">
-                    HTML/CSS/JS coder
-                </div>
-                <div class="website">
-                    <a href="https://stanfy.com/">https://stanfy.com/</a>
-                </div>
-                <div class="summary">
-                    <p>The key technologies used: Backbone.js, PhoneGap, JavaScript, jQuery, HTML, HTML5, CSS, CSS3.</p>
-                </div>
-                <ul class="highlights">
-                    <li>Developed hybrid mobile application PhoneGap (iOS, Android)</li>
-                    <li>Worked with the front-end part (in-app HTML views) of mobile applications;</li>
-                </ul>
-            </div>
-        </section>
-    </section>
-    <section class="section">
-        <h2 class="section-title">Education</h2>
-        <section id="education">
-            <h3 class="semantic-header-readers">Education places list:</h3>
-            <header>
-                <h3 class="institution">
-                    National Aviation University
-                </h3>
-                <div class="date">
-                    <span class="startDate">
-                        2007
-                    </span>
-                    <span class="endDate">
-                        - 2012
-                    </span>
-                </div>
-            </header>
-            <div class="item">
-                <div class="studyType">
-                    Master of Engineering
-                </div>
-                <div class="area">
-                    Multimedia systems
-                </div>
-            </div>
-        </section>
-    </section>
-    <section class="section">
-        <h2 class="section-title">Skills</h2>
-        <section id="skills">
-            <h3 class="semantic-header-readers">Skills list with related tags:</h3>
-            <div class="item">
-                <div class="name">
-                    React.js
-                </div>
-                <div class="level master">
-                    <em>master</em>
-                    <div class="bar"></div>
-                </div>
+    <!-- Skills -->
+    
+
+
+  <section id="skills" class="section">
+    <aside class="section-title">
+      <h3>Skills</h3>
+    </aside>
+    <div class="section-content">
+      <div class="item-row">
+        <div class="item-row-split">
+          
+            <div class="item-split">
+              <div class="name">
+                <h4>React.js</h4>
+              </div>
+              
                 <ul class="keywords">
+                  
                     <li>Redux</li>
+                  
                     <li>Redux-Saga</li>
+                  
+                    <li>MobX</li>
+                  
                 </ul>
+              
             </div>
-            <div class="item">
-                <div class="name">
-                    Ember.js
-                </div>
-                <div class="level intermediate">
-                    <em>intermediate</em>
-                    <div class="bar"></div>
-                </div>
+          
+            <div class="item-split">
+              <div class="name">
+                <h4>AngularJS</h4>
+              </div>
+              
             </div>
-            <div class="item">
-                <div class="name">
-                    AngularJS
-                </div>
-                <div class="level intermediate">
-                    <em>intermediate</em>
-                    <div class="bar"></div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="name">
-                    Version Control Systems
-                </div>
-                <div class="level advanced">
-                    <em>advanced</em>
-                    <div class="bar"></div>
-                </div>
+          
+            <div class="item-split">
+              <div class="name">
+                <h4>Other</h4>
+              </div>
+              
                 <ul class="keywords">
-                    <li>GIT</li>
-                    <li>SVN</li>
-                </ul>
-            </div>
-            <div class="item">
-                <div class="name">
-                    Other
-                </div>
-                <ul class="keywords">
+                  
                     <li>Component-based UI</li>
+                  
                     <li>Responsive design</li>
-                    <li>Progressive Enhancement</li>
+                  
                     <li>Chrome Extension development</li>
-                    <li>Setup of Continuous Integration</li>
+                  
+                    <li>Continuous Integration</li>
+                  
                     <li>JIRA tuning</li>
+                  
                 </ul>
+              
             </div>
-        </section>
-    </section>
-    <section class="section">
-        <h2 class="section-title">Languages</h2>
-        <section id="languages">
-            <h3 class="semantic-header-readers">Languages with fluency level list:</h3>
-            <div class="item">
-                <div class="language">
-                    Russian
-                </div>
-                <div class="fluency">
-                    <em>Native speaker</em>
-                </div>
-            </div>
-            <div class="item">
-                <div class="language">
-                    English
-                </div>
-                <div class="fluency">
-                    <em>Upper Intermediate</em>
-                </div>
-            </div>
-            <div class="item">
-                <div class="language">
-                    Ukraine
-                </div>
-                <div class="fluency">
-                    <em>Fluent</em>
-                </div>
-            </div>
-        </section>
-    </section>
-    <section class="section">
-        <h2 class="section-title">Interests</h2>
-        <section id="interests">
-            <h3 class="semantic-header-readers">Interests list:</h3>
-            <div class="item">
-                <div class="name">
-                    Sport
-                </div>
-                <ul class="keywords">
-                    <li>Squash</li>
-                </ul>
-            </div>
-            <div class="item">
-                <div class="name">
-                    Hobby
-                </div>
-                <ul class="keywords">
-                    <li>Travelling</li>
-                    <li>Astronomy</li>
-                    <li>Listen to Podcasts</li>
-                </ul>
-            </div>
-        </section>
-    </section>
-    <section class="section">
-        <h2 class="section-title">References</h2>
-        <section id="references">
-            <h3 class="semantic-header-readers">References list:</h3>
-            <div class="item">
-                <blockquote class="reference">
-                    “ Sergey is a great young specialist. One of those who has good knowledge,
-                    amazing desire to explore and implement new technologies.
-                    I've collaborated with Sergey as product owner and can recommend him as a great front-end developer
-                    with huge potential. ”
-                </blockquote>
-                <div class="name">
-                    Sergey Moliavko
-                </div>
-            </div>
-            <div class="item">
-                <blockquote class="reference">
-                    “ Sergey is a very innovative developer, who always followed the innovations
-                    in the industry and successfully applied them in practice.
-                    Self-organized and able to achieve the goals. Very friendly, good team player.
-                    It was a pleasure to work with him. ”
-                </blockquote>
-                <div class="name">
-                    Anastasiia Voitova
-                </div>
-            </div>
-            <div class="item">
-                <blockquote class="reference">
-                    “ Sergey is highly professional HTML/CSS technician.
-                    We worked together on a few extremely challenging projects,
-                    that required continuous attention, constant engagement,
-                    commitment, and readiness to generate new ideas,
-                    and it proved to be an excellent collaboration.
-                    Sergey is especially attentive to details and is eager to try out new technologies and approaches,
-                    which makes him a great team member and contractor. ”
-                </blockquote>
-                <div class="name">
-                    Anna Mininkova
-                </div>
-            </div>
-        </section>
-    </section>
-</div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
 
 
+    <!-- Education -->
+    
+
+
+  <section id="education" class="section">
+    <aside class="section-title">
+      <h3>Education</h3>
+    </aside>
+    <div class="section-content">
+      
+        <div class=".item-row">
+          <h4 class="strike-through">
+            <span>National Aviation University</span>
+            <span class="date">
+              September 2007 — June 2012
+            </span>
+          </h4>
+          <div class="area">Multimedia systems</div>
+          <div class="studyType">
+            Master of Engineering
+            
+          </div>
+          
+        </div>
+      
+    </div>
+  </section>
+
+
+    <!-- Certificates -->
+    
+
+
+
+    <!-- Awards -->
+    
+
+
+
+
+    <!-- Projects -->
+    
+
+
+
+    <!-- Volunteer -->
+    
+
+
+
+    <!-- Publications -->
+    
+
+
+
+    <!-- Languages -->
+    
+
+
+  <section id="languages" class="section">
+    <aside class="section-title">
+      <h3>Languages</h3>
+    </aside>
+    <div class="section-content">
+      <div class="item-row">
+        <div class="item-row-split">
+          
+            <div class="item-split">
+              <div class="language"><strong>Ukrainian</strong></div>
+              <div class="fluency">Native speaker</div>
+            </div>
+          
+            <div class="item-split">
+              <div class="language"><strong>English</strong></div>
+              <div class="fluency">Upper Intermediate</div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Interests -->
+    
+
+
+  <section id="interests" class="section">
+    <aside class="section-title">
+      <h3>Interests</h3>
+    </aside>
+    <div class="section-content">
+      <div class="item-row">
+        <div class="item-row-split">
+          
+            <div class="item-split">
+              <div class="name">
+                <h4>Sport</h4>
+              </div>
+              <ul class="keywords">
+                
+                  <li>Squash</li>
+                
+              </ul>
+            </div>
+          
+            <div class="item-split">
+              <div class="name">
+                <h4>Hobby</h4>
+              </div>
+              <ul class="keywords">
+                
+                  <li>Travelling</li>
+                
+                  <li>Astronomy</li>
+                
+                  <li>Listening to Podcasts</li>
+                
+              </ul>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- References -->
+    
+
+
+  <section id="references" class="section">
+    <aside class="section-title">
+      <h3>References</h3>
+    </aside>
+    <div class="section-content">
+      
+        <div class="item-row">
+          <p>Serhii is a great young specialist. One of those who has good knowledge, amazing desire to explore and implement new technologies. I&#39;ve collaborated with Serhii as product owner and can recommend him as a great front-end developer with huge potential.</p>
+          <p class="name">
+            <strong>— Sergey Moliavko</strong></p>
+          </p>
+          <br>
+        </div>
+      
+        <div class="item-row">
+          <p>Serhii is a very innovative developer, who always followed the innovations in the industry and successfully applied them in practice. Self-organized and able to achieve the goals. Very friendly, good team player. It was a pleasure to work with him.</p>
+          <p class="name">
+            <strong>— Anastasiia Voitova</strong></p>
+          </p>
+          <br>
+        </div>
+      
+        <div class="item-row">
+          <p>Serhii is highly professional HTML/CSS technician. We worked together on a few extremely challenging projects, that required continuous attention, constant engagement, commitment, and readiness to generate new ideas, and it proved to be an excellent collaboration. Serhii is especially attentive to details and is eager to try out new technologies and approaches, which makes him a great team member and contractor.</p>
+          <p class="name">
+            <strong>— Anna Mininkova</strong></p>
+          </p>
+          <br>
+        </div>
+      
+    </div>
+  </section>
+
+
+  </div>
 </body>
 </html>
