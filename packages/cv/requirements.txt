@@ -1,0 +1,2 @@
+# PDF ATS audit (install into .venv via pnpm setup:audit-pdf)
+ats-reader @ git+https://github.com/erikcaineolson/ats-reader.git

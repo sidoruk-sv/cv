@@ -1,0 +1,245 @@
+{
+  "$schema": "https://unpkg.com/@jsonresume/schema@1.3.1/schema.json",
+  "basics": {
+    "name": "SERHII SYDORUK",
+    "label": "Senior Frontend Engineer",
+    "image": "https://www.gravatar.com/avatar/486489f9bd18cb42de73c12f67ac889c?s=400",
+    "email": "sydorukserhij@gmail.com",
+    "phone": "098-811-3773",
+    "url": "https://sydoruk.com",
+    "summary": "Frontend engineer with 15+ years of experience building interfaces across web, mobile, desktop and system-integrated applications. My work has moved from early JavaScript and hybrid mobile apps through React product development and frontend infrastructure at Wix to my current work on ATM software, where a React/TypeScript UI communicates with a native C# application through WebView2. I tend to go beyond the visible UI: understanding the system behind a feature, finding friction in real workflows, and turning ideas into practical engineering improvements.",
+    "location": {
+      "city": "Remote",
+      "region": "Ukraine",
+      "countryCode": "UA"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "sydoruk-sv",
+        "url": "https://www.linkedin.com/in/sydoruk-sv"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Alliance Digital",
+      "position": "Frontend Engineer",
+      "startDate": "2024-10",
+      "summary": "Frontend integration for ATM transaction software on Windows, connecting a React/TypeScript UI with a native C# application through WebView2.",
+      "highlights": [
+        "Build and maintain the React/TypeScript integration layer for ATM transaction flows, bridging the frontend with the native C# application.",
+        "Design and implement automatic TypeScript type generation from C# code, keeping frontend types synchronized with the native application.",
+        "Build and maintain GitLab CI/CD with automated builds and deployment to Windows environments over WinRM, making delivery reproducible and reducing manual release work."
+      ]
+    },
+    {
+      "name": "Wix.com",
+      "position": "Frontend Team Lead",
+      "url": "https://wix.com",
+      "startDate": "2018-09",
+      "endDate": "2024-06",
+      "summary": "Worked across product UI, frontend infrastructure and platform integration before becoming a team lead in a small group responsible for Wix Groups.",
+      "highlights": [
+        "Built frontend UI for Wix domain and DNS configuration.",
+        "Worked on frontend infrastructure/tooling, integrating complex engineering solutions into tools used by frontend developers.",
+        "Joined the Wix Groups frontend team and became its Team Lead, working on the integration of Groups into the wider Wix platform."
+      ]
+    },
+    {
+      "name": "Helsi.me",
+      "position": "Frontend Team Lead",
+      "url": "https://helsi.me",
+      "startDate": "2017-02",
+      "endDate": "2018-09",
+      "summary": "Joined Helsi at an early stage, when the service was used by a small number of clinics and fewer than a thousand patients; left as the platform had grown to millions of active users.",
+      "highlights": [
+        "Led frontend development of the patient-facing part of the platform, including the patient account.",
+        "Built and evolved frontend functionality using React, Redux, Redux-Saga and Redux Form.",
+        "Partnered with users and real healthcare workflows to improve the patient experience, and routed feedback on broader platform issues beyond the frontend team's scope."
+      ]
+    },
+    {
+      "name": "Cogniance",
+      "position": "Frontend Engineer",
+      "url": "https://star.global",
+      "startDate": "2015-08",
+      "endDate": "2017-01",
+      "highlights": [
+        "Developed a homeowners web app with AngularJS and SCSS.",
+        "Built a Chrome extension for Gmail using InboxSDK, Backbone and SCSS.",
+        "Developed CRM analytics interfaces with React and Redux."
+      ]
+    },
+    {
+      "name": "R&R Music Ltd",
+      "position": "Frontend Developer",
+      "startDate": "2014-10",
+      "endDate": "2015-07",
+      "highlights": [
+        "Built a music library catalog with Ember.js, JavaScript and SCSS."
+      ]
+    },
+    {
+      "name": "ZEO Alliance",
+      "position": "Frontend Developer",
+      "startDate": "2012-10",
+      "endDate": "2014-10",
+      "highlights": [
+        "Built an indoor landing management system and HTML-based WebViews for desktop applications, including MacKeeper.",
+        "Worked with HTML5, CSS3 and JavaScript frameworks."
+      ]
+    },
+    {
+      "name": "Stanfy",
+      "position": "HTML/CSS/JavaScript Developer",
+      "startDate": "2011-08",
+      "endDate": "2012-10",
+      "highlights": [
+        "Built frontend WebViews for PhoneGap hybrid mobile applications targeting iOS and Android."
+      ]
+    },
+    {
+      "name": "Independent",
+      "position": "Web Developer",
+      "startDate": "2009-01",
+      "endDate": "2011-07",
+      "highlights": [
+        "Started web development through independent projects and hands-on work alongside an experienced web developer."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Aviation University",
+      "area": "Multimedia Systems",
+      "studyType": "Master of Engineering",
+      "startDate": "2007-01",
+      "endDate": "2012-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "HTML/CSS",
+        "Redux",
+        "MobX",
+        "Redux-Saga"
+      ]
+    },
+    {
+      "name": "Architecture",
+      "keywords": [
+        "Component architecture",
+        "State management",
+        "Frontend infrastructure",
+        "Platform integration"
+      ]
+    },
+    {
+      "name": "Integration",
+      "keywords": [
+        "WebView2",
+        "C#",
+        "Native app integration",
+        "REST/API-driven UI"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "keywords": [
+        "CI/CD",
+        "Git",
+        "Monorepos",
+        "Code review",
+        "Developer tooling",
+        "Technical leadership"
+      ]
+    },
+    {
+      "name": "Earlier Stack",
+      "keywords": [
+        "AngularJS",
+        "Ember.js",
+        "Backbone.js",
+        "PhoneGap",
+        "jQuery"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Office Wayfinding Prototype",
+      "description": "Built a working React/Leaflet prototype for indoor navigation across multiple office floors, with interactive maps, floor switching, points of interest and route planning. Started from a real usability problem: people regularly struggled to navigate the building.",
+      "keywords": [
+        "React",
+        "Leaflet.js",
+        "Indoor navigation",
+        "Interactive maps"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Ukrainian",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Upper-Intermediate"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Current Exploration",
+      "keywords": [
+        "Embedded systems",
+        "ESP32",
+        "Electronics",
+        "Systems programming",
+        "Hardware-software integration"
+      ]
+    },
+    {
+      "name": "Hobbies",
+      "keywords": [
+        "Travel",
+        "Gaming",
+        "Astronomy"
+      ]
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "lastModified": "2026-09-08T23:20:00",
+    "theme": {
+      "fontFamily": "Helvetica, Arial, sans-serif",
+      "contactOrder": [
+        "location",
+        "email",
+        "phone",
+        "linkedin"
+      ],
+      "contactOrderPdf": [
+        "location",
+        "email",
+        "phone",
+        "linkedin",
+        "url"
+      ],
+      "sectionOrder": [
+        "basics",
+        "work",
+        "skills",
+        "projects",
+        "education",
+        "languages",
+        "interests"
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@cv/app",
+  "version": "2024.0.0",
+  "private": true,
+  "author": "fine <sidoruksergey@gmail.com>",
+  "repository": "git@github.com:sidoruk-sv/cv.git",
+  "scripts": {
+    "build": "resume export index.html --theme folio && node scripts/inject-pdf-link.js",
+    "build:theme-pdf": "pnpm --filter jsonresume-theme-cv-pdf build",
+    "lint": "resume validate",
+    "audit:ats": "resume audit --theme folio",
+    "audit:ats:pdf": "pnpm build:theme-pdf && resume audit --theme jsonresume-theme-cv-pdf",
+    "setup:audit-pdf": "sh scripts/setup-audit-pdf.sh",
+    "audit:pdf": "sh scripts/audit-pdf.sh",
+    "verify:fields": "pnpm build:theme-pdf && node scripts/verify-fields.js",
+    "serve": "resume serve --theme folio --port 4000",
+    "install:chrome": "PUPPETEER_CACHE_DIR=$HOME/.cache/puppeteer PUPPETEER_SKIP_CHROME_HEADLESS_SHELL_DOWNLOAD=true node ./node_modules/puppeteer/install.mjs",
+    "export:pdf": "PUPPETEER_CACHE_DIR=$HOME/.cache/puppeteer sh -c 'pnpm build:theme-pdf && pnpm install:chrome && node scripts/export-pdf.js'",
+    "export:pdf:folio": "PUPPETEER_CACHE_DIR=$HOME/.cache/puppeteer sh -c 'pnpm install:chrome && resume export CV_Serhii_Sydoruk_Senior_Frontend.folio.pdf --theme folio --format pdf'",
+    "export:md": "resume export resume.md --format md"
+  },
+  "dependencies": {
+    "jsonresume-theme-cv-pdf": "workspace:*",
+    "jsonresume-theme-folio": "^1.3.1",
+    "resume-cli": "^3.7.2"
+  },
+  "devDependencies": {
+    "@jsonresume/schema": "^1.3.1",
+    "jsonresume-theme-class": "^0.1.2",
+    "jsonresume-theme-reference": "^0.2.4",
+    "jsonresume-theme-straightforward": "^0.5.0",
+    "jsonresume-theme-tech": "^1.5.1",
+    "puppeteer": "^23.11.1"
+  }
+}
