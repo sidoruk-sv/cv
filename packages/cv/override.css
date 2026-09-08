@@ -1,0 +1,82 @@
+/* Optional theme overrides for jsonresume-theme-folio */
+
+/* Floated avatar is not cleared by Folio's header; Summary HR overlaps it */
+@media screen and (min-width: 602px), print {
+  .header.clear::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .header + .section {
+    clear: both;
+  }
+}
+
+/* Folio dist ignores meta.theme.contactOrder — reorder + hide self-referential website */
+.contact-bar {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.contact-bar > .contact-item:has(.fa-location-dot) {
+  order: 1;
+}
+
+.contact-bar > .contact-item:has(.fa-envelope) {
+  order: 2;
+}
+
+.contact-bar > .contact-item:has(.fa-mobile-screen-button) {
+  order: 3;
+}
+
+.contact-bar > .item:has(.fa-linkedin) {
+  order: 4;
+}
+
+.contact-bar > .contact-item.cv-pdf-link {
+  order: 5;
+}
+
+.contact-bar > .contact-item:has(.fa-up-right-from-square),
+.contact-bar > .contact-item:has(a[href*="sydoruk.com"]) {
+  display: none !important;
+}
+
+@media print {
+  #skills {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Text-only contact bar (icons are invisible to ATS parsers) */
+  .contact-bar [class*="fa-"] {
+    display: none !important;
+  }
+
+  .contact-bar > .contact-item:has(.fa-location-dot)::before {
+    content: "Location: ";
+    font-weight: 600;
+  }
+
+  .contact-bar > .contact-item:has(.fa-envelope)::before {
+    content: "Email: ";
+    font-weight: 600;
+  }
+
+  .contact-bar > .contact-item:has(.fa-mobile-screen-button)::before {
+    content: "Phone: ";
+    font-weight: 600;
+  }
+
+  .contact-bar > .item:has(.fa-linkedin) .username::before {
+    content: "LinkedIn: ";
+    font-weight: 600;
+  }
+
+  .contact-bar > .contact-item:has(.fa-up-right-from-square)::before {
+    content: "Website: ";
+    font-weight: 600;
+  }
+}

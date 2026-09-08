@@ -1,0 +1,24 @@
+{
+  "name": "cv-workspace",
+  "private": true,
+  "repository": "git@github.com:sidoruk-sv/cv.git",
+  "scripts": {
+    "build": "pnpm --filter @cv/app build",
+    "build:theme-pdf": "pnpm --filter jsonresume-theme-cv-pdf build",
+    "lint": "pnpm --filter @cv/app lint",
+    "audit:ats": "pnpm --filter @cv/app audit:ats",
+    "audit:ats:pdf": "pnpm --filter @cv/app audit:ats:pdf",
+    "setup:audit-pdf": "pnpm --filter @cv/app setup:audit-pdf",
+    "audit:pdf": "pnpm --filter @cv/app audit:pdf",
+    "serve": "pnpm --filter @cv/app serve",
+    "export:pdf": "pnpm --filter @cv/app export:pdf",
+    "export:pdf:folio": "pnpm --filter @cv/app export:pdf:folio",
+    "export:md": "pnpm --filter @cv/app export:md"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "puppeteer"
+    ]
+  },
+  "packageManager": "pnpm@10.32.1"
+}

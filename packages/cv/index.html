@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SERHII SYDORUK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./override.css">
+    <style>
+      /* Variables (light) */
+:root {
+  --color-text: #40484f; --color-text-secondary: #606d76; --color-text-muted: #757575;
+  --color-heading: #202931; --color-date: #202931; --color-accent: #ff6d1f;
+  --color-link: #0095ff; --color-link-hover: #0c65a5;
+  --color-background: var(--color-section-title-bg); --color-background-alt: #f1f8ff;
+  --color-border: #ccc; --color-border-light: #ddd;
+  --color-keyword-text: #2c5777; --color-keyword-bg: #dfeaf1; --color-keyword-border: #dfeaf1;
+  --color-reference-border: #ff6d1f;
+  --color-bar-beginner: #eb5f51; --color-bar-intermediate: #ffdf1f;
+  --color-bar-advanced: #5cb85c; --color-bar-master: #59c596;
+  --color-section-title-bg: #fff;
+  --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+  /* Type scale — 14px base, ~1.14 ratio (subtle, professional) */
+  --fs-name: 1.857rem;       /* 26px (reduced from 30px) */
+  --fs-label: 1.286rem;      /* 18px (reduced from 20px) */
+  --fs-title: 1.143rem;      /* 16px */
+  --fs-card: 1.071rem;       /* 15px */
+  --fs-body: 1rem;           /* 14px */
+  --fs-meta: 0.929rem;       /* 13px (date, location, keywords) */
+  --fs-section: 0.929rem;    /* 13px caps with tracking (increased from 12px) */
+  --fs-fine: 0.786rem;       /* 11px */
+
+  /* Line heights — multiples of 4 against base */
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-base: 1.5;
+
+  /* Spacing — 8pt grid */
+  --sp-1: 0.286rem;  /*  4px */
+  --sp-2: 0.571rem;  /*  8px */
+  --sp-3: 0.857rem;  /* 12px */
+  --sp-4: 1.143rem;  /* 16px */
+  --sp-5: 1.714rem;  /* 24px */
+  --sp-6: 2.286rem;  /* 32px */
+}
+
+/* Variables (dark) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #d4d4d8; --color-text-secondary: #a1a1aa; --color-text-muted: #9ca3af;
+    --color-heading: #e4e4e7; --color-date: #ffffff; --color-accent: #fb923c;
+    --color-link: #60a5fa; --color-link-hover: #93c5fd;
+    --color-background: #18181b; --color-background-alt: #27272a;
+    --color-border: #3f3f46; --color-border-light: #3f3f46;
+    --color-keyword-text: #93c5fd; --color-keyword-bg: #1e3a5f; --color-keyword-border: #1e3a5f;
+    --color-reference-border: #fb923c;
+    --color-bar-beginner: #ef4444; --color-bar-intermediate: #eab308;
+    --color-bar-advanced: #22c55e; --color-bar-master: #34d399;
+    --color-section-title-bg: #18181b;
+    --font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+}
+
+/* Minimal reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+/* Base typography */
+body, html { font-family: var(--font-family); font-size: 14px; color: var(--color-text); background-color: var(--color-background); font-weight: 400; line-height: var(--lh-base); text-align: left; }
+p { display: block; }
+a { color: var(--color-link); text-decoration: none; }
+a:hover { color: var(--color-link-hover); text-decoration: underline; }
+li { list-style-type: square; list-style-position: outside; margin-left: 1.3em; }
+h1 { font-size: var(--fs-name); line-height: var(--lh-tight); }
+h2 { font-size: var(--fs-label); line-height: var(--lh-snug); }
+h3 { font-size: var(--fs-card); line-height: var(--lh-snug); }
+em { color: var(--color-text-muted); }
+strong { font-weight: 700; }
+
+/* Accessibility */
+.skip-to-content { position: absolute; left: -9999px; top: 0; z-index: 999; padding: 0.5em 1em; background: var(--color-accent); color: #fff; font-weight: 600; text-decoration: none; }
+.skip-to-content:focus { left: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 2px; }
+
+/* Print */
+@media print {
+  @page { margin: 0.7cm 0.8cm 0.6cm 0.8cm; }
+  body { line-height: var(--lh-snug); }
+  ul { margin-top: var(--sp-2); }
+  ul, li { padding: 0; }
+}
+
+@media screen and (min-width: 1025px) { li { margin-left: 1.5em; } }
+
+/* Timeline item dates — global so rules apply across scoped child components (DateRange, singleDate) */
+.timeline-item header .date { display: block; font-size: var(--fs-meta); padding: 0; color: var(--color-text-secondary); font-weight: 500; line-height: var(--lh-snug); letter-spacing: 0.02em; }
+@media screen and (max-width: 601px) { .timeline-item header .date { float: none; margin-top: var(--sp-1); } }
+@media screen and (min-width: 602px) { .timeline-item header .date { float: right; padding-top: 0.2em; } }
+@media print { .timeline-item header .date { float: right; padding-top: 0.2em; } }
+
+    </style>
+    <style id="svelte-rssu9l">.resume.svelte-rssu9l {padding:1.5rem;}
+
+  @media print {.resume.svelte-rssu9l {margin:0.1em;padding:0.1em;-ms-word-wrap:break-word;word-wrap:break-word;line-height:1.25;}
+  }
+
+  @media screen and (max-width: 601px) {.resume.svelte-rssu9l {width:100%;padding:1rem;box-sizing:border-box;}
+  }
+
+  @media screen and (min-width: 602px) {.resume.svelte-rssu9l {width:80%;margin:0 auto;}
+  }
+
+  @media screen and (min-width: 1025px) {.resume.svelte-rssu9l {width:820px;margin:2rem auto;}
+  }</style><style id="svelte-10f9ycp">.header.svelte-10f9ycp {margin-bottom:var(--sp-4);}.title-container.svelte-10f9ycp {display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--sp-2);}.separator.svelte-10f9ycp {font-size:var(--fs-name);color:var(--color-border-light);font-weight:200;user-select:none;}.name.svelte-10f9ycp {font-size:var(--fs-name);font-weight:200;line-height:var(--lh-tight);letter-spacing:-0.015em;color:var(--color-heading);}.label.svelte-10f9ycp {color:var(--color-heading);font-size:var(--fs-label);font-weight:300;line-height:var(--lh-snug);margin-top:var(--sp-1);margin-bottom:var(--sp-3);}.title-container.svelte-10f9ycp .label:where(.svelte-10f9ycp) {margin-top:0;margin-bottom:0;}.image.svelte-10f9ycp {width:11em;float:right;border-radius:4px;}.contact-bar.svelte-10f9ycp {display:flex;flex-flow:row wrap;justify-content:flex-start;margin-top:var(--sp-2);gap:4px 6px;}.contact-item.svelte-10f9ycp {display:inline-block;padding:3px 8px;font-size:var(--fs-meta);line-height:var(--lh-snug);color:var(--color-text);background-color:var(--color-background-alt);border-radius:4px;}.icon.svelte-10f9ycp {margin-right:0.4em;color:var(--color-text-secondary);}
+
+  @media print {.header.svelte-10f9ycp {margin-bottom:var(--sp-2);}.contact-item.svelte-10f9ycp {background-color:var(--color-background-alt) !important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}.main-summary.svelte-10f9ycp {padding:0;background:transparent;}
+  }
+
+  @media screen and (max-width: 601px) {.separator.svelte-10f9ycp {display:none;}.title-container.svelte-10f9ycp {flex-direction:column;align-items:flex-start;gap:var(--sp-1);}.name.svelte-10f9ycp {font-size:1.857rem;}.label.svelte-10f9ycp {font-size:1.286rem;}.image.svelte-10f9ycp {float:none;display:block;margin:0 auto 1rem;width:8em;}
+  }</style><style id="svelte-a76edc">.item.svelte-a76edc {display:inline-block;padding:3px 8px;font-size:var(--fs-meta);line-height:var(--lh-snug);background-color:var(--color-background-alt);border-radius:4px;border:1px solid transparent;}.item.highlighted.svelte-a76edc {background-color:var(--color-keyword-bg);border-color:var(--color-accent);}.social.svelte-a76edc {font-size:1.1em;margin-right:0.4em;color:var(--brand-light);}.url-text.svelte-a76edc {font-size:0.9em;color:var(--color-text-secondary);font-weight:normal;}
+
+  @media print {.item.svelte-a76edc {background-color:var(--color-background-alt) !important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}.item.highlighted.svelte-a76edc {background-color:var(--color-keyword-bg) !important;border-color:var(--color-accent) !important;}.social.svelte-a76edc {color:var(--brand-light) !important;print-color-adjust:exact;-webkit-print-color-adjust:exact;}.fa-stack-overflow::after {content:"";}
+  }
+
+  @media (prefers-color-scheme: dark) {.social.svelte-a76edc {color:var(--brand-dark);}
+  }</style><style id="svelte-1lncexq">.section.svelte-1lncexq {margin-bottom:var(--sp-5);}header.svelte-1lncexq {position:relative;margin-bottom:var(--sp-3);}header.svelte-1lncexq::after {position:absolute;left:0;top:50%;height:1px;background:var(--color-border);content:"";width:100%;z-index:0;display:block;}.item-count.svelte-1lncexq {margin-left:0.5em;font-weight:500;opacity:0.65;}.section-title.svelte-1lncexq {position:relative;z-index:1;display:inline-block;background:var(--color-section-title-bg);padding-right:0.85em;color:var(--color-accent);text-transform:uppercase;font-weight:700;border:none;font-size:var(--fs-section);line-height:var(--lh-tight);letter-spacing:0.12em;}
+
+  @media print {.section.svelte-1lncexq {margin-bottom:var(--sp-2);padding:0;}header.svelte-1lncexq {margin-bottom:var(--sp-2);break-after:avoid;page-break-after:avoid;}header.svelte-1lncexq::after {background:#d8d8d8;height:0.5px;print-color-adjust:exact;-webkit-print-color-adjust:exact;}.location {padding-bottom:var(--sp-1);}.section.svelte-1lncexq > section > section {margin:var(--sp-3) 0;}.section.svelte-1lncexq > section > section:last-of-type {margin-bottom:0;}.item-count.svelte-1lncexq {display:none;}
+  }</style><style id="svelte-g3qng">.timeline-item.svelte-g3qng {margin-top:var(--sp-4);}.timeline-item.svelte-g3qng:first-of-type {margin-top:0;}.position.svelte-g3qng,
+  .company.svelte-g3qng,
+  .organization.svelte-g3qng,
+  .institution.svelte-g3qng,
+  .date.svelte-g3qng,
+  .area.svelte-g3qng,
+  .studyType.svelte-g3qng,
+  .title.svelte-g3qng,
+  .awarder.svelte-g3qng,
+  .publisher.svelte-g3qng,
+  .issuer.svelte-g3qng {display:inline;}.position.svelte-g3qng,
+  .studyType.svelte-g3qng,
+  .area.svelte-g3qng,
+  .title.svelte-g3qng {font-weight:700;}.company.svelte-g3qng::before,
+  .institution.svelte-g3qng::before,
+  .organization.svelte-g3qng::before,
+  .awarder.svelte-g3qng::before {content:"at ";}.company.svelte-g3qng,
+  .institution.svelte-g3qng,
+  .organization.svelte-g3qng,
+  .awarder.svelte-g3qng {color:var(--color-text-secondary);font-weight:400;}.item.svelte-g3qng {overflow:hidden;}
+
+  /* p margin handled via inline styles in paragraphSplit */.clear.svelte-g3qng::after {content:"";display:table;clear:both;}.location.svelte-g3qng {display:block;margin-top:var(--sp-1);color:var(--color-text-secondary);font-weight:500;font-size:var(--fs-meta);line-height:var(--lh-snug);}.item.svelte-g3qng .summary:where(.svelte-g3qng) {margin-top:var(--sp-2);}header.svelte-g3qng {font-size:var(--fs-title);position:relative;line-height:var(--lh-snug);margin-bottom:0;}.header-left.svelte-g3qng .position:where(.svelte-g3qng) + .company:where(.svelte-g3qng)::before,
+  .header-left.svelte-g3qng .position:where(.svelte-g3qng) + .institution:where(.svelte-g3qng)::before,
+  .header-left.svelte-g3qng .position:where(.svelte-g3qng) + .organization:where(.svelte-g3qng)::before,
+  .header-left.svelte-g3qng .position:where(.svelte-g3qng) + .awarder:where(.svelte-g3qng)::before {content:"at ";}.title-link.svelte-g3qng {color:inherit;text-decoration:none;}.title-link.svelte-g3qng:hover {text-decoration:underline;color:var(--color-link);}
+
+  @media print {.timeline-item.svelte-g3qng {margin-top:var(--sp-2);break-inside:auto;page-break-inside:auto;}.timeline-item.svelte-g3qng > header:where(.svelte-g3qng) {break-after:avoid;page-break-after:avoid;}.company.svelte-g3qng a:where(.svelte-g3qng),
+    .title-link.svelte-g3qng {color:var(--color-text);text-decoration:none;}.company.svelte-g3qng::before,
+    .institution.svelte-g3qng::before,
+    .organization.svelte-g3qng::before,
+    .awarder.svelte-g3qng::before {content:"at ";}.section p {margin:0;padding:0;}.fa-location-dot:before {padding-left:0.1em;}
+  }
+
+  @media screen and (max-width: 601px) {.section > section.svelte-g3qng > header:where(.svelte-g3qng) {font-size:1.071rem;}
+  }
+
+  @media screen and (min-width: 1025px) {.section > section.svelte-g3qng > header:where(.svelte-g3qng) .space-left:where(.svelte-g3qng) {opacity:1;cursor:pointer;}.section > section.svelte-g3qng:not(.main-summary) {margin-left:1.67rem;}.company.svelte-g3qng::before, .institution.svelte-g3qng::before, .organization.svelte-g3qng::before, .awarder.svelte-g3qng::before {content:"| ";}.header-left.svelte-g3qng {float:left;width:70%;word-break:normal;}.display.svelte-g3qng {display:none;}.display.svelte-g3qng:not(.none) {display:block;}
+  }</style><style id="svelte-1615qzb">ul.svelte-1615qzb {margin:var(--sp-2) 0 0 0;}li.svelte-1615qzb {display:inline-block;margin:2px 4px 2px 0;padding:3px 8px;font-size:var(--fs-fine);line-height:1.4;color:var(--color-keyword-text);background-color:var(--color-keyword-bg);border:1px solid var(--color-keyword-border);border-radius:4px;white-space:normal;max-width:100%;word-break:break-word;transition:background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;}li.svelte-1615qzb:hover {background-color:var(--color-keyword-border);transform:translateY(-1px);cursor:default;}
+
+  @media print {ul.svelte-1615qzb {margin:var(--sp-1) 0 0 0;}li.svelte-1615qzb {display:inline-block;margin:2px 4px 2px 0;padding:2px 6px;font-size:var(--fs-meta);line-height:var(--lh-snug);color:var(--color-keyword-text);background-color:var(--color-keyword-bg);border:0 solid var(--color-keyword-border);border-radius:3px;white-space:normal;max-width:100%;word-break:break-word;print-color-adjust:exact;-webkit-print-color-adjust:exact;transform:none;transition:none;}li.svelte-1615qzb::after {content:none;}.skills-grid li.svelte-1615qzb::after {content:none;}ul.svelte-1615qzb::before {font-size:var(--fs-body);font-weight:600;}ul.keywords.svelte-1615qzb::before {content:"Skills: ";font-size:var(--fs-body);}.skills-grid ul.svelte-1615qzb::before {content:none;}ul.courses.svelte-1615qzb::before {content:"Major courses: ";font-size:var(--fs-body);}.skills-grid .keywords.svelte-1615qzb {font-size:var(--fs-meta);margin:0;}
+  }</style><style id="svelte-hqrtpf">.highlights.svelte-hqrtpf {margin:var(--sp-2) 0 0 0;}.highlights.svelte-hqrtpf > li:where(.svelte-hqrtpf) {margin-top:var(--sp-1);line-height:var(--lh-base);}.highlights.svelte-hqrtpf > li:where(.svelte-hqrtpf):first-child {margin-top:0;}
+
+  @media print {.highlights.svelte-hqrtpf {margin:var(--sp-2) 0 0 0;}.highlights.svelte-hqrtpf > li:where(.svelte-hqrtpf) {margin-top:var(--sp-1);line-height:var(--lh-snug);}.highlights.svelte-hqrtpf > li:where(.svelte-hqrtpf) > p {margin-bottom:var(--sp-1);}
+  }</style><style id="svelte-18p2gu6">.skills-columns.svelte-18p2gu6 {margin-top:var(--sp-2);column-count:2;column-gap:var(--sp-6);}.skill-row.svelte-18p2gu6 {display:block;margin-bottom:var(--sp-3);line-height:var(--lh-base);break-inside:avoid;page-break-inside:avoid;}.skill-row.svelte-18p2gu6:last-child {margin-bottom:0;}.name.svelte-18p2gu6 {font-weight:700;font-size:var(--fs-body);color:var(--color-heading);margin-right:var(--sp-1);display:inline;}.level-text.svelte-18p2gu6 {font-weight:400;font-size:0.9em;color:var(--color-text-secondary);font-style:italic;}.keywords-list.svelte-18p2gu6 {font-size:var(--fs-meta);color:var(--color-text);display:inline;}
+
+  @media print {.skills-columns.svelte-18p2gu6 {column-gap:var(--sp-4);break-inside:auto;page-break-inside:auto;}.skill-row.svelte-18p2gu6 {margin-bottom:var(--sp-2);break-inside:auto;page-break-inside:auto;}
+  }
+
+  @media screen and (max-width: 600px) {.skills-columns.svelte-18p2gu6 {column-count:1;}
+  }</style><style id="svelte-rbv6q6">.gpa.svelte-rbv6q6 {clear:both;padding-bottom:0.5em;}</style><style id="svelte-2dygc7">.languages-grid.svelte-2dygc7 {display:grid;grid-template-columns:repeat(var(--languages-cols, 3), minmax(0, 1fr));column-gap:var(--sp-5);row-gap:var(--sp-3);}.language-item.svelte-2dygc7 {padding:0;border-bottom:none;}.language.svelte-2dygc7 {font-weight:700;font-size:var(--fs-card);line-height:var(--lh-snug);color:var(--color-heading);margin-bottom:var(--sp-1);}.display.svelte-2dygc7 {display:block;opacity:1 !important;}
+
+  @media screen and (max-width: 479px) {.languages-grid.svelte-2dygc7 {grid-template-columns:1fr;}
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 601px) {.languages-grid.svelte-2dygc7 {grid-template-columns:repeat(2, minmax(0, 1fr));}
+  }</style><style id="svelte-10tjtrd">.level.svelte-10tjtrd {margin-bottom:0.5em;}.level.svelte-10tjtrd em:where(.svelte-10tjtrd) {padding-left:0.2em;}.level.svelte-10tjtrd .bar:where(.svelte-10tjtrd) {border:1px solid var(--color-border-light);display:block;width:10em;height:5px;position:relative;}.level.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after {position:absolute;content:" ";top:0;left:0;background:black;height:5px;}.level.beginner.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after {background:var(--color-bar-beginner);width:2.5em;}.level.intermediate.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after {background:var(--color-bar-intermediate);width:5em;}.level.advanced.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after,
+  .level.fluent.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after {background:var(--color-bar-advanced);width:7.5em;}.level.master.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after,
+  .level.expert.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after,
+  .level.native.speaker.svelte-10tjtrd .bar:where(.svelte-10tjtrd)::after {background:var(--color-bar-master);width:10em;}
+
+  @media print {.level.svelte-10tjtrd {margin:0.1rem 0;font-weight:400;}.level.svelte-10tjtrd em:where(.svelte-10tjtrd) {font-style:normal;padding:0.1em 0;}.level.svelte-10tjtrd .bar:where(.svelte-10tjtrd) {display:none;}
+  }</style><style id="svelte-1bnc9h3">.interests-grid.svelte-1bnc9h3 {display:grid;grid-template-columns:repeat(var(--interests-cols, 3), minmax(0, 1fr));column-gap:var(--sp-5);row-gap:var(--sp-3);}.interest-item.svelte-1bnc9h3 {padding:0;border-bottom:none;}.interest-item.svelte-1bnc9h3 .name:where(.svelte-1bnc9h3) {font-weight:700;font-size:var(--fs-card);line-height:var(--lh-snug);color:var(--color-heading);margin-bottom:var(--sp-1);}
+
+  @media screen and (max-width: 479px) {.interests-grid.svelte-1bnc9h3 {grid-template-columns:1fr;}
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 601px) {.interests-grid.svelte-1bnc9h3 {grid-template-columns:repeat(2, minmax(0, 1fr));}
+  }
+
+  @media print {.interests-grid.svelte-1bnc9h3 {display:flex;flex-wrap:wrap;column-gap:var(--sp-5);row-gap:var(--sp-3);}.interest-item.svelte-1bnc9h3 {flex:0 0 calc((100% - (var(--interests-cols) - 1) * var(--sp-5)) / var(--interests-cols));break-inside:avoid;page-break-inside:avoid;}
+  }</style>
+    <style>
+      :root {
+  --font-family: Helvetica, Arial, sans-serif;
+}
+    </style>
+  </head>
+  <body>
+    <a class="skip-to-content" href="#resume">Skip to content</a> <main id="resume" class="resume svelte-rssu9l"><!--[0--><!--[0--><header class="header clear svelte-10f9ycp"><!--[0--><img class="image svelte-10f9ycp" src="https://www.gravatar.com/avatar/486489f9bd18cb42de73c12f67ac889c?s=400" alt="SERHII SYDORUK"/> <div class="middle"><h1 class="name svelte-10f9ycp">SERHII SYDORUK</h1> <h2 class="label svelte-10f9ycp">Senior Frontend Engineer</h2></div> <!--[-1--><!----> <div class="contact-bar svelte-10f9ycp"><!--[0--><!--[0--><div class="item svelte-a76edc"><div class="username"><span class="fa-brands fa-linkedin social svelte-a76edc" style="--brand-light: #007bb6; --brand-dark: #007bb6"></span> <!--[0--><span class="url"><a class="hide-href-print" target="_blank" href="https://www.linkedin.com/in/sydoruk-sv"><!--[0-->sydoruk-sv</a></span></div></div> <!--[0--><div class="contact-item svelte-10f9ycp"><span class="fa-regular fa-envelope icon svelte-10f9ycp"></span> <a class="hide-href-print" href="mailto:sydorukserhij@gmail.com">sydorukserhij@gmail.com</a></div> <!--[0--><div class="contact-item svelte-10f9ycp"><span class="fa-solid fa-mobile-screen-button icon svelte-10f9ycp"></span> <a class="hide-href-print" href="tel:098-811-3773">098-811-3773</a></div> <!--[0--><div class="contact-item svelte-10f9ycp"><span class="fa-solid fa-location-dot icon svelte-10f9ycp"></span> <span>Remote, Ukraine (UA)</span></div> <!--[0--><div class="contact-item svelte-10f9ycp"><span class="fa-solid fa-up-right-from-square icon svelte-10f9ycp"></span> <a class="hide-href-print" target="_blank" href="https://sydoruk.com">https://sydoruk.com</a></div></div></header> <!--[0--><section class="section svelte-1lncexq"><header class="svelte-1lncexq"><h2 class="section-title svelte-1lncexq">Summary<!--[-1--></h2></header> <section class="main-summary svelte-10f9ycp"><div><!--[0--><!----><p style="margin:0">Frontend engineer with 15+ years of experience building interfaces across web, mobile, desktop and system-integrated applications. My work has moved from early JavaScript and hybrid mobile apps through React product development and frontend infrastructure at Wix to my current work on ATM software, where a React/TypeScript UI communicates with a native C# application through WebView2. I tend to go beyond the visible UI: understanding the system behind a feature, finding friction in real workflows, and turning ideas into practical engineering improvements.</p><!----><!----></div></section><!----></section><!--[2--><!--[0--><section class="section svelte-1lncexq"><header class="svelte-1lncexq"><h2 class="section-title svelte-1lncexq">Work Experience<!--[0--><span class="item-count svelte-1lncexq">(8)</span></h2></header> <section id="work"><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Oct 2024</span> <!--[-1--><span class="endDate">- Current</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Frontend Engineer</div> <!--[0--><div class="company svelte-g3qng"><!--[-1-->Alliance Digital</div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[0--><div class="summary svelte-g3qng"><!--[0--><!----><p style="margin:0">Frontend integration for ATM transaction software on Windows, connecting a React/TypeScript UI with a native C# application through WebView2.</p><!----><!----></div> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Build and maintain the React/TypeScript integration layer for ATM transaction flows, bridging the frontend with the native C# application.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Design and implement automatic TypeScript type generation from C# code, keeping frontend types synchronized with the native application.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Build and maintain GitLab CI/CD with automated builds and deployment to Windows environments over WinRM, making delivery reproducible and reducing manual release work.</p><!----><!----></li></ul><!----></div></section><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Sept 2018</span> <!--[0--><span class="endDate">- Jun 2024</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Frontend Team Lead</div> <!--[0--><div class="company svelte-g3qng"><!--[0--><a target="_blank" href="https://wix.com" class="svelte-g3qng">Wix.com</a></div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[0--><div class="summary svelte-g3qng"><!--[0--><!----><p style="margin:0">Worked across product UI, frontend infrastructure and platform integration before becoming a team lead in a small group responsible for Wix Groups.</p><!----><!----></div> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Built frontend UI for Wix domain and DNS configuration.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Worked on frontend infrastructure/tooling, integrating complex engineering solutions into tools used by frontend developers.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Joined the Wix Groups frontend team and became its Team Lead, working on the integration of Groups into the wider Wix platform.</p><!----><!----></li></ul><!----></div></section><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Feb 2017</span> <!--[0--><span class="endDate">- Sept 2018</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Frontend Team Lead</div> <!--[0--><div class="company svelte-g3qng"><!--[0--><a target="_blank" href="https://helsi.me" class="svelte-g3qng">Helsi.me</a></div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[0--><div class="summary svelte-g3qng"><!--[0--><!----><p style="margin:0">Joined Helsi at an early stage, when the service was used by a small number of clinics and fewer than a thousand patients; left as the platform had grown to millions of active users.</p><!----><!----></div> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Led frontend development of the patient-facing part of the platform, including the patient account.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Built and evolved frontend functionality using React, Redux, Redux-Saga and Redux Form.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Partnered with users and real healthcare workflows to improve the patient experience, and routed feedback on broader platform issues beyond the frontend team's scope.</p><!----><!----></li></ul><!----></div></section><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Aug 2015</span> <!--[0--><span class="endDate">- Jan 2017</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Frontend Engineer</div> <!--[0--><div class="company svelte-g3qng"><!--[0--><a target="_blank" href="https://star.global" class="svelte-g3qng">Cogniance</a></div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[-1--> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Developed a homeowners web app with AngularJS and SCSS.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Built a Chrome extension for Gmail using InboxSDK, Backbone and SCSS.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Developed CRM analytics interfaces with React and Redux.</p><!----><!----></li></ul><!----></div></section><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Oct 2014</span> <!--[0--><span class="endDate">- Jul 2015</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Frontend Developer</div> <!--[0--><div class="company svelte-g3qng"><!--[-1-->R&amp;R Music Ltd</div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[-1--> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Built a music library catalog with Ember.js, JavaScript and SCSS.</p><!----><!----></li></ul><!----></div></section><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Oct 2012</span> <!--[0--><span class="endDate">- Oct 2014</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Frontend Developer</div> <!--[0--><div class="company svelte-g3qng"><!--[-1-->ZEO Alliance</div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[-1--> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Built an indoor landing management system and HTML-based WebViews for desktop applications, including MacKeeper.</p><!----><!----></li><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Worked with HTML5, CSS3 and JavaScript frameworks.</p><!----><!----></li></ul><!----></div></section><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Aug 2011</span> <!--[0--><span class="endDate">- Oct 2012</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->HTML/CSS/JavaScript Developer</div> <!--[0--><div class="company svelte-g3qng"><!--[-1-->Stanfy</div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[-1--> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Built frontend WebViews for PhoneGap hybrid mobile applications targeting iOS and Android.</p><!----><!----></li></ul><!----></div></section><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Jan 2009</span> <!--[0--><span class="endDate">- Jul 2011</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Web Developer</div> <!--[0--><div class="company svelte-g3qng"><!--[-1-->Independent</div></div></header> <!--[-1--> <!--[-1--><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[-1--> <!--[0--><ul class="highlights svelte-hqrtpf"><li class="svelte-hqrtpf"><!--[0--><!----><p style="margin:0">Started web development through independent projects and hands-on work alongside an experienced web developer.</p><!----><!----></li></ul><!----></div></section></section><!----></section><!--[1--><!--[0--><section class="section svelte-1lncexq"><header class="svelte-1lncexq"><h2 class="section-title svelte-1lncexq">Skills<!--[-1--></h2></header> <section class="skills-columns svelte-18p2gu6"><div class="skill-row svelte-18p2gu6"><!--[0--><span class="name svelte-18p2gu6">Frontend<!--[-1-->:</span> <span class="keywords-list svelte-18p2gu6">React, TypeScript, JavaScript, HTML/CSS, Redux, MobX, Redux-Saga</span></div><div class="skill-row svelte-18p2gu6"><!--[0--><span class="name svelte-18p2gu6">Architecture<!--[-1-->:</span> <span class="keywords-list svelte-18p2gu6">Component architecture, State management, Frontend infrastructure, Platform integration</span></div><div class="skill-row svelte-18p2gu6"><!--[0--><span class="name svelte-18p2gu6">Integration<!--[-1-->:</span> <span class="keywords-list svelte-18p2gu6">WebView2, C#, Native app integration, REST/API-driven UI</span></div><div class="skill-row svelte-18p2gu6"><!--[0--><span class="name svelte-18p2gu6">Engineering<!--[-1-->:</span> <span class="keywords-list svelte-18p2gu6">CI/CD, Git, Monorepos, Code review, Developer tooling, Technical leadership</span></div><div class="skill-row svelte-18p2gu6"><!--[0--><span class="name svelte-18p2gu6">Earlier Stack<!--[-1-->:</span> <span class="keywords-list svelte-18p2gu6">AngularJS, Ember.js, Backbone.js, PhoneGap, jQuery</span></div></section><!----></section><!--[3--><!--[0--><section class="section svelte-1lncexq"><header class="svelte-1lncexq"><h2 class="section-title svelte-1lncexq">Projects<!--[0--><span class="item-count svelte-1lncexq">(1)</span></h2></header> <section id="projects"><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[-1--> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Office Wayfinding Prototype</div> <!--[-1--></div></header> <!--[-1--> <!--[0--><ul class="keywords svelte-1615qzb"><li class="svelte-1615qzb">React</li><li class="svelte-1615qzb">Leaflet.js</li><li class="svelte-1615qzb">Indoor navigation</li><li class="svelte-1615qzb">Interactive maps</li></ul><!----> <!--[-1--> <div class="item svelte-g3qng"><!--[0--><div class="summary svelte-g3qng"><!--[0--><!----><p style="margin:0">Built a working React/Leaflet prototype for indoor navigation across multiple office floors, with interactive maps, floor switching, points of interest and route planning. Started from a real usability problem: people regularly struggled to navigate the building.</p><!----><!----></div> <!--[-1--><!----></div></section></section><!----></section><!--[5--><!--[0--><section class="section svelte-1lncexq"><header class="svelte-1lncexq"><h2 class="section-title svelte-1lncexq">Education<!--[0--><span class="item-count svelte-1lncexq">(1)</span></h2></header> <section id="education"><section class="timeline-item svelte-g3qng"><header class="clear svelte-g3qng"><!--[0--><!--[0--><div class="date"><span class="startDate">Jan 2007</span> <!--[0--><span class="endDate">- Jan 2012</span></div> <div class="header-left svelte-g3qng"><!--[0--><div class="position svelte-g3qng"><!--[-1-->Master of Engineering Multimedia Systems</div> <!--[0--><div class="institution svelte-g3qng"><!--[-1-->National Aviation University</div></div></header> <!--[-1--> <!--[-1--><!----> <!--[0--><!--[-1--> <!--[-1--><!----> <div class="item svelte-g3qng"><!--[-1--> <!--[-1--><!----></div></section></section><!----></section><!--[9--><!--[0--><section class="section svelte-1lncexq"><header class="svelte-1lncexq"><h2 class="section-title svelte-1lncexq">Languages<!--[0--><span class="item-count svelte-1lncexq">(2)</span></h2></header> <section class="languages-grid svelte-2dygc7" style="--languages-cols: 2"><div class="language-entry display svelte-2dygc7"><!--[0--><h3 class="language svelte-2dygc7">Ukrainian</h3> <div class="language-item svelte-2dygc7"><!--[0--><div class="level master svelte-10tjtrd" role="meter" aria-label="Native" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><em class="svelte-10tjtrd">Native</em> <div class="bar svelte-10tjtrd" aria-hidden="true"></div></div></div></div><div class="language-entry display svelte-2dygc7"><!--[0--><h3 class="language svelte-2dygc7">English</h3> <div class="language-item svelte-2dygc7"><!--[0--><div class="level intermediate svelte-10tjtrd" role="meter" aria-label="Upper-Intermediate" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><em class="svelte-10tjtrd">Upper-Intermediate</em> <div class="bar svelte-10tjtrd" aria-hidden="true"></div></div></div></div></section><!----></section><!--[10--><!--[0--><section class="section svelte-1lncexq"><header class="svelte-1lncexq"><h2 class="section-title svelte-1lncexq">Interests<!--[0--><span class="item-count svelte-1lncexq">(2)</span></h2></header> <section class="interests-grid svelte-1bnc9h3" style="--interests-cols: 2"><div class="interest-item svelte-1bnc9h3"><!--[0--><h3 class="name svelte-1bnc9h3">Current Exploration</h3> <!--[0--><ul class="keywords svelte-1615qzb"><li class="svelte-1615qzb">Embedded systems</li><li class="svelte-1615qzb">ESP32</li><li class="svelte-1615qzb">Electronics</li><li class="svelte-1615qzb">Systems programming</li><li class="svelte-1615qzb">Hardware-software integration</li></ul><!----> <!--[-1--></div><div class="interest-item svelte-1bnc9h3"><!--[0--><h3 class="name svelte-1bnc9h3">Hobbies</h3> <!--[0--><ul class="keywords svelte-1615qzb"><li class="svelte-1615qzb">Travel</li><li class="svelte-1615qzb">Gaming</li><li class="svelte-1615qzb">Astronomy</li></ul><!----> <!--[-1--></div></section><!----></section></main>
+  </body>
+</html>
