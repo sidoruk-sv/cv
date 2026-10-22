@@ -15,10 +15,5 @@
     "export:pdf:folio": "pnpm --filter @cv/app export:pdf:folio",
     "export:md": "pnpm --filter @cv/app export:md"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "puppeteer"
-    ]
-  },
-  "packageManager": "pnpm@10.32.1"
+  "packageManager": "pnpm@12.15.0"
 }
